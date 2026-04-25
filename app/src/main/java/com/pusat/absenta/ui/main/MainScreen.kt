@@ -14,15 +14,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.ui.Modifier
+import com.pusat.absenta.ui.attendance.AttendanceScreen
 import com.pusat.absenta.ui.home.HomeScreen
 
 @Composable
 fun MainScreen() {
-    var selectedItem by remember { mutableStateOf(0) }
+    var selectedItem by rememberSaveable { mutableIntStateOf(0) }
     val items = listOf("Home", "Absensi", "Riwayat", "Profile")
     val icons = listOf(
         Icons.Filled.Home,
@@ -46,10 +47,10 @@ fun MainScreen() {
             }
         }
     ) { innerPadding ->
-        // Hanya Home yang baru dibuat, sisanya berupa placeholder kosong
+        // Konten dari masing-masing tab
         when (selectedItem) {
             0 -> HomeScreen(modifier = Modifier.padding(innerPadding))
-            1 -> Text("Halaman Absensi", modifier = Modifier.padding(innerPadding))
+            1 -> AttendanceScreen(modifier = Modifier.padding(innerPadding))
             2 -> Text("Halaman Riwayat", modifier = Modifier.padding(innerPadding))
             3 -> Text("Halaman Profile", modifier = Modifier.padding(innerPadding))
         }
