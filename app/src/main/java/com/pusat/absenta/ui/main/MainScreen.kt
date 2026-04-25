@@ -21,6 +21,8 @@ import androidx.compose.ui.Modifier
 import com.pusat.absenta.ui.attendance.AttendanceScreen
 import com.pusat.absenta.ui.home.HomeScreen
 
+import com.pusat.absenta.ui.history.HistoryScreen
+
 @Composable
 fun MainScreen() {
     var selectedItem by rememberSaveable { mutableIntStateOf(0) }
@@ -51,7 +53,7 @@ fun MainScreen() {
         when (selectedItem) {
             0 -> HomeScreen(modifier = Modifier.padding(innerPadding))
             1 -> AttendanceScreen(modifier = Modifier.padding(innerPadding))
-            2 -> Text("Halaman Riwayat", modifier = Modifier.padding(innerPadding))
+            2 -> HistoryScreen(modifier = Modifier.padding(innerPadding))
             3 -> Text("Halaman Profile", modifier = Modifier.padding(innerPadding))
         }
     }
