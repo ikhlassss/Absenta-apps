@@ -19,10 +19,9 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.ui.Modifier
 import com.pusat.absenta.ui.attendance.AttendanceScreen
-import com.pusat.absenta.ui.home.HomeScreen
-
 import com.pusat.absenta.ui.history.HistoryScreen
-
+import com.pusat.absenta.ui.home.HomeScreen
+import com.pusat.absenta.ui.profile.ProfileScreen
 @Composable
 fun MainScreen() {
     var selectedItem by rememberSaveable { mutableIntStateOf(0) }
@@ -54,7 +53,7 @@ fun MainScreen() {
             0 -> HomeScreen(modifier = Modifier.padding(innerPadding))
             1 -> AttendanceScreen(modifier = Modifier.padding(innerPadding))
             2 -> HistoryScreen(modifier = Modifier.padding(innerPadding))
-            3 -> Text("Halaman Profile", modifier = Modifier.padding(innerPadding))
+            3 -> ProfileScreen(modifier = Modifier.padding(innerPadding))
         }
     }
 }
