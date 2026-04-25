@@ -20,7 +20,10 @@ import com.pusat.absenta.ui.theme.AbsentaTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(
+    onLoginSuccess: () -> Unit = {},
+    modifier: Modifier = Modifier
+) {
     var nipOrEmail by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
@@ -112,7 +115,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
 
         // Login Button
         Button(
-            onClick = { /* TODO: Implement Login */ },
+            onClick = onLoginSuccess,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp),
