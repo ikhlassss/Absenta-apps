@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.pusat.absenta.ui.main.MainScreen
+import com.pusat.absenta.ui.navigation.AppNavigation
 import com.pusat.absenta.ui.theme.AbsentaTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AbsentaTheme {
-                MainScreen()
+                AppNavigation()
             }
         }
     }
